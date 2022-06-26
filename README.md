@@ -4,7 +4,6 @@
 
 ## Getting_Data
 
-  import re
-  import json
-  
-  ![image](https://user-images.githubusercontent.com/34675746/175834082-6dc65b8a-83e9-4aaf-86f4-6b67e924ad4e.png)
+  ![image](https://user-images.githubusercontent.com/34675746/175834193-ba31ff14-5c54-44ad-ab5d-8e64c5a8eb4a.png)
+
+  ![image](https://user-images.githubusercontent.com/34675746/175834209-d9043417-7dbf-4c51-bbeb-83325b64e88a.png)

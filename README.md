@@ -1,4 +1,5 @@
-# Stock_Price_prediction
+# Stock Price prediction
+### Made by Vladimir Poplavsky and Viktor Rokytko
 
 
 

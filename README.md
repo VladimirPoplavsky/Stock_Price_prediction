@@ -15,8 +15,8 @@
 
 ## Machine Learning
 
-[Machine Learning P.1](LinearR.ipynb)
-[Machine Learning P.2](LSTM.ipynb)
-[Machine Learning P.3](LSTM-Check.ipynb)
+[Machine Learning P.1 ](LinearR.ipynb)
+[Machine Learning P.2 ](LSTM.ipynb)
+[Machine Learning P.3 ](LSTM-Check.ipynb)
 
 # Conclusion

@@ -1,3 +1,6 @@
+
+#Imports 
+
 ```python
 import re
 import json
@@ -16,16 +19,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 
 import sys
-
 import unittest
-
 import time
 
 ```
 
-
 ```python
-import pandas as pd
 import time
 from datetime import datetime, timedelta
 import numpy as np; np.random.seed(0)
@@ -43,9 +42,7 @@ import seaborn as sns
 
 
 ```python
-import pandas as pd
-import numpy as np
-import pandas as pd
+
 from sklearn import linear_model
 
 
@@ -62,8 +59,6 @@ from sklearn.metrics import r2_score
 
 
 ```python
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
@@ -71,6 +66,12 @@ import math
 from sklearn.preprocessing import MinMaxScaler
 ```
 
+
+#Getting Data
+
+###In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used indexs such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 10 years.###
+
+## Web Scraping
 
 ```python
 def get_infinity_page_html_data(chromedriver_path="./chromedriver.exe", scroll_number=50, sleep_time=2, url = ""):

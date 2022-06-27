@@ -1,6 +1,6 @@
 # Background
 
-##### A share is a security issued by a company. All investors who bought the shares became co-owners of the company. The share just confirms that its owner has a share in the company, even minor.
+###### A share is a security issued by a company. All investors who bought the shares became co-owners of the company. The share just confirms that its owner has a share in the company, even minor.
 
 
 

@@ -76,11 +76,6 @@ from sklearn.preprocessing import MinMaxScaler
  
 # Getting Data
 
-### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used indexs such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 8 years.###
-
-## Web Scraping
-
-
 ### For our project we decided to use data from yahoo finance website as it has all data that we need 
 
 ### Using web Scraping we encounter several issues with data collection such as:

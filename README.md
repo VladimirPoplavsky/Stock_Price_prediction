@@ -1,8 +1,8 @@
 # Background
 
 ###### A share is a security issued by a company. All investors who bought the shares became co-owners of the company. The share just confirms that its owner has a share in the company, even minor.
-##### More and more people begin to think about the possibility of investing and increasing at their capital. The most common way - starting your own business - requires a large amount of initial capital and personal participation. These circumstances limit the desire and possibilities of many. Thanks to the development of the Internet and computer technology, today everyone has the opportunity to invest in the financial stock market by trading securities and stocks over the Internet.
-
+###### More and more people begin to think about the possibility of investing and increasing at their capital. The most common way - starting your own business - requires a large amount of initial capital and personal participation. These circumstances limit the desire and possibilities of many. Thanks to the development of the Internet and computer technology, today everyone has the opportunity to invest in the financial stock market by trading securities and stocks over the Internet.
+##### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used index`s such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 10 years.
 
 # Imports 
 

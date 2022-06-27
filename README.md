@@ -84,8 +84,10 @@ from sklearn.preprocessing import MinMaxScaler
 ### For our project we decided to use data from yahoo finance website as it has all data that we need 
 
 ### Using web Scraping we encounter several issues with data collection such as:
-Dynamic loading pages  : Data from yahoo finance was stored in dynamically loading json object, using Web Driver mechanism we managed bypass that  issue and collect row data.
-Inconsistent data  :  while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
+#### Dynamic loading pages: 
+ Data from yahoo finance was stored in dynamically loading json object, using Web Driver mechanism we managed bypass that  issue and collect row data.
+#### Inconsistent data:
+ while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
 
 ```python
 def get_infinity_page_html_data(chromedriver_path="./chromedriver.exe", scroll_number=50, sleep_time=2, url = ""):

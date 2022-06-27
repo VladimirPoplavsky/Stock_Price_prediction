@@ -1,5 +1,5 @@
 
-#Imports 
+# Imports 
 
 ```python
 import re
@@ -66,12 +66,19 @@ import math
 from sklearn.preprocessing import MinMaxScaler
 ```
 
+ 
+# Getting Data
 
-#Getting Data
-
-###In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used indexs such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 10 years.###
+### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used indexs such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 8 years.###
 
 ## Web Scraping
+
+
+### For our project we decided to use data from yahoo finance website as it has all data that we need 
+
+### Using web Scraping we encounter several issues with data collection such as:
+Dynamic loading pages  : Data from yahoo finance was stored in dynamically loading json object, using Web Driver mechanism we managed bypass that  issue and collect row data.
+Inconsistent data  :  while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
 
 ```python
 def get_infinity_page_html_data(chromedriver_path="./chromedriver.exe", scroll_number=50, sleep_time=2, url = ""):
@@ -100,6 +107,9 @@ def make_table(soup):
     return df
 ```
 
+## Data cleaning 
+
+# Remooving "Devidend and 
 
 ```python
 def data_cleaning(df):
@@ -118,6 +128,9 @@ def write_to_file(df, path):
     df.to_csv(filepath) 
 ```
 
+## Web Driver 
+
+### 
 
 ```python
 base_url = "https://finance.yahoo.com/quote/"
@@ -137,302 +150,8 @@ for index in indexes:
     
 ```
 
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    scroll_number: 1
-    scroll_number: 2
-    scroll_number: 3
-    scroll_number: 4
-    scroll_number: 5
-    scroll_number: 6
-    scroll_number: 7
-    scroll_number: 8
-    scroll_number: 9
-    scroll_number: 10
-    scroll_number: 11
-    scroll_number: 12
-    scroll_number: 13
-    scroll_number: 14
-    scroll_number: 15
-    scroll_number: 16
-    scroll_number: 17
-    scroll_number: 18
-    scroll_number: 19
-    scroll_number: 20
-    scroll_number: 21
-    scroll_number: 22
-    scroll_number: 23
-    scroll_number: 24
-    scroll_number: 25
-    scroll_number: 26
-    scroll_number: 27
-    scroll_number: 28
-    scroll_number: 29
-    scroll_number: 30
-    scroll_number: 31
-    scroll_number: 32
-    scroll_number: 33
-    scroll_number: 34
-    scroll_number: 35
-    scroll_number: 36
-    scroll_number: 37
-    scroll_number: 38
-    scroll_number: 39
-    scroll_number: 40
-    scroll_number: 41
-    scroll_number: 42
-    scroll_number: 43
-    scroll_number: 44
-    scroll_number: 45
-    scroll_number: 46
-    scroll_number: 47
-    scroll_number: 48
-    scroll_number: 49
-    
-
+### After collecting raw data from all indexes we decided to create one data frame. Although the data we collected was correct we still needed clean some rows that contained Stoch split/Dividend Values. 
+Doing so after combining all data together caused shifts in rows and or data wasn't synchronal . That caused wrong and illogical  visualizations so we needed to come back and rework our cleaning algorithm 
 
 ```python
 indexes = ["NVDA","AAPL","TSLA","AMD","MSFT","INTC"]
@@ -566,169 +285,7 @@ main_df
     2498        2499  Jun 04, 2012    5.61    5.68    5.42    5.58         5.58   
     2499        2500  Jun 01, 2012    5.71    5.83    5.55    5.63         5.63   
     
-            Volume  
-    0     24264100  
-    1     30839700  
-    2     27214600  
-    3     21236500  
-    4     25260500  
-    ...        ...  
-    2495   2460500  
-    2496   4549500  
-    2497   3154500  
-    2498   5154500  
-    2499   4429000  
-    
-    [2500 rows x 8 columns]
-    <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 2500 entries, 0 to 2499
-    Data columns (total 8 columns):
-     #   Column       Non-Null Count  Dtype  
-    ---  ------       --------------  -----  
-     0   Unnamed: 0   2500 non-null   int64  
-     1   Date         2500 non-null   object 
-     2   Open         2500 non-null   float64
-     3   High         2500 non-null   float64
-     4   Low          2500 non-null   float64
-     5   Close*       2500 non-null   float64
-     6   Adj Close**  2500 non-null   float64
-     7   Volume       2500 non-null   int64  
-    dtypes: float64(5), int64(2), object(1)
-    memory usage: 175.8+ KB
-    None
-          Unnamed: 0          Date   Open   High    Low  Close*  Adj Close**  \
-    0              0  May 06, 2022  94.34  98.18  92.65   95.34        95.34   
-    1              1  May 05, 2022  97.65  97.84  92.17   93.87        93.87   
-    2              2  May 04, 2022  98.18  99.69  91.70   99.42        99.42   
-    3              3  May 03, 2022  89.85  92.21  89.01   91.13        91.13   
-    4              4  May 02, 2022  85.66  90.37  85.32   89.84        89.84   
-    ...          ...           ...    ...    ...    ...     ...          ...   
-    2495        2495  Jun 07, 2012   6.10   6.14   5.72    5.76         5.76   
-    2496        2496  Jun 06, 2012   5.91   6.10   5.91    6.02         6.02   
-    2497        2497  Jun 05, 2012   5.66   5.84   5.64    5.83         5.83   
-    2498        2498  Jun 04, 2012   5.76   5.83   5.52    5.63         5.63   
-    2499        2499  Jun 01, 2012   5.90   5.90   5.63    5.73         5.73   
-    
-             Volume  
-    0     144211500  
-    1     153129800  
-    2     225394100  
-    3     126381800  
-    4      98304100  
-    ...         ...  
-    2495   17451300  
-    2496   13460500  
-    2497   12256100  
-    2498   15576200  
-    2499   25558000  
-    
-    [2500 rows x 8 columns]
-    <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 2500 entries, 0 to 2499
-    Data columns (total 8 columns):
-     #   Column       Non-Null Count  Dtype  
-    ---  ------       --------------  -----  
-     0   Unnamed: 0   2500 non-null   int64  
-     1   Date         2500 non-null   object 
-     2   Open         2500 non-null   float64
-     3   High         2500 non-null   float64
-     4   Low          2500 non-null   float64
-     5   Close*       2500 non-null   float64
-     6   Adj Close**  2500 non-null   float64
-     7   Volume       2500 non-null   object 
-    dtypes: float64(5), int64(1), object(2)
-    memory usage: 175.8+ KB
-    None
-          Unnamed: 0          Date    Open    High     Low  Close*  Adj Close**  \
-    0              0  May 06, 2022  274.81  279.25  271.27  274.73       274.09   
-    1              1  May 05, 2022  285.54  286.35  274.34  277.35       276.71   
-    2              2  May 04, 2022  282.59  290.88  276.73  289.98       289.31   
-    3              3  May 03, 2022  283.96  284.13  280.15  281.78       281.13   
-    4              4  May 02, 2022  277.71  284.94  276.22  284.47       283.81   
-    ...          ...           ...     ...     ...     ...     ...          ...   
-    2495        2534  Jun 07, 2012   29.64   29.70   29.17   29.23        23.87   
-    2496        2535  Jun 06, 2012   28.88   29.37   28.81   29.35        23.96   
-    2497        2536  Jun 05, 2012   28.51   28.75   28.39   28.51        23.28   
-    2498        2537  Jun 04, 2012   28.62   28.78   28.32   28.55        23.31   
-    2499        2538  Jun 01, 2012   28.76   28.96   28.44   28.45        23.23   
-    
-            Volume  
-    0     37748300  
-    1     43260400  
-    2     33599300  
-    3     25978600  
-    4     35151100  
-    ...        ...  
-    2495  37792800  
-    2496  46860500  
-    2497  45715400  
-    2498  47926300  
-    2499  56634300  
-    
-    [2500 rows x 8 columns]
-    <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 2500 entries, 0 to 2499
-    Data columns (total 8 columns):
-     #   Column       Non-Null Count  Dtype  
-    ---  ------       --------------  -----  
-     0   Unnamed: 0   2500 non-null   int64  
-     1   Date         2500 non-null   object 
-     2   Open         2500 non-null   float64
-     3   High         2500 non-null   float64
-     4   Low          2500 non-null   float64
-     5   Close*       2500 non-null   float64
-     6   Adj Close**  2500 non-null   float64
-     7   Volume       2500 non-null   int64  
-    dtypes: float64(5), int64(2), object(1)
-    memory usage: 175.8+ KB
-    None
-          Unnamed: 0          Date   Open   High    Low  Close*  Adj Close**  \
-    0              0  May 06, 2022  44.49  45.15  43.84   44.30        44.30   
-    1              1  May 05, 2022  45.60  45.91  44.13   44.60        44.60   
-    2              3  May 04, 2022  45.06  46.64  44.41   46.54        46.17   
-    3              4  May 03, 2022  44.79  45.49  44.23   45.06        44.71   
-    4              5  May 02, 2022  43.72  44.99  43.51   44.96        44.61   
-    ...          ...           ...    ...    ...    ...     ...          ...   
-    2495        2535  Jun 07, 2012  26.37  26.43  25.89   25.94        19.32   
-    2496        2536  Jun 06, 2012  25.51  26.11  25.43   26.07        19.42   
-    2497        2537  Jun 05, 2012  25.04  25.57  25.00   25.43        18.94   
-    2498        2538  Jun 04, 2012  25.28  25.36  24.84   25.04        18.65   
-    2499        2539  Jun 01, 2012  25.40  25.71  25.12   25.14        18.73   
-    
-            Volume  
-    0     40910000  
-    1     52996700  
-    2     44625600  
-    3     40158400  
-    4     45446500  
-    ...        ...  
-    2495  29534200  
-    2496  33553600  
-    2497  29491300  
-    2498  39903700  
-    2499  40246400  
-    
-    [2500 rows x 8 columns]
-    <class 'pandas.core.frame.DataFrame'>
-    Int64Index: 2500 entries, 0 to 2499
-    Data columns (total 8 columns):
-     #   Column       Non-Null Count  Dtype  
-    ---  ------       --------------  -----  
-     0   Unnamed: 0   2500 non-null   int64  
-     1   Date         2500 non-null   object 
-     2   Open         2500 non-null   float64
-     3   High         2500 non-null   float64
-     4   Low          2500 non-null   float64
-     5   Close*       2500 non-null   float64
-     6   Adj Close**  2500 non-null   float64
-     7   Volume       2500 non-null   int64  
-    dtypes: float64(5), int64(2), object(1)
-    memory usage: 175.8+ KB
-    None
-    
-
-
-
+  
 
 <div>
 <style scoped>

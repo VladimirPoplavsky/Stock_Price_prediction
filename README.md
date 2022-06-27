@@ -76,7 +76,7 @@ from sklearn.preprocessing import MinMaxScaler
  
 # Getting Data
 
-### For our project we decided to use data from yahoo finance website as it has all data that we need 
+## For our project we decided to use data from "yahoo finance" website as it has all data that we need 
 
 ### Using web Scraping we encounter several issues with data collection such as:
 #### Dynamic loading pages: 

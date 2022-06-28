@@ -610,7 +610,7 @@ main_df
 </div>
 
 
-### After the data handling we have clear dataset  
+### After the data handling we have clear dataset with 107500 cells 
 
 ```python
 main_df.info()

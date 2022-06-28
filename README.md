@@ -157,7 +157,7 @@ for index in indexes:
     
 ```
 
-### After collecting raw data from all indexes we decided to create one data frame. Although the data we collected was correct we still needed clean some rows that contained Stoch split/Dividend Values. 
+###  
 Doing so after combining all data together caused shifts in rows and or data wasn't synchronal . That caused wrong and illogical  visualizations so we needed to come back and rework our cleaning algorithm 
 
 ```python

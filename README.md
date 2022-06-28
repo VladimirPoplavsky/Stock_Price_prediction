@@ -1299,7 +1299,9 @@ sns.violinplot(tdf.Day , tdf['NVDA Daily change'])
 
 
 ## In the next part we can find out what is correlation level between some parameters.
-###As expected correlation is Hight thought all Tech companies and little less with TSLA index as it is more “Car” then “tech”
+### As expected correlation is Hight thought all Tech companies and little less with TSLA index as it is more “Car” then “tech”
+
+### But, when again decreasing our  dataset to 500 rows we can see that correlation increases among all stocks 
 
 ```python
 tdf = pd.DataFrame(df, columns = ['NVDA Daily change','AAPL Daily change','AMD Daily change','MSFT Daily change','INTC Daily change','TSLA Daily change'])
@@ -1335,12 +1337,6 @@ sns.heatmap(tdf.corr(), annot=True)
 
 
 
-
-    <AxesSubplot:>
-
-
-
-
     
 ![png](output_22_1.png)
     
@@ -1353,13 +1349,6 @@ sns.heatmap(tdf.corr(), annot=True)
 ```
 
 
-
-
-    <AxesSubplot:>
-
-
-
-
     
 ![png](output_23_1.png)
     
@@ -1370,11 +1359,6 @@ sns.heatmap(tdf.corr(), annot=True)
 tdf = pd.DataFrame(df, columns = ['NVDA Close','AAPL Close','AMD Close','MSFT Close','TSLA Close'])
 sns.heatmap(tdf.corr(), annot=True)
 ```
-
-
-
-
-    <AxesSubplot:>
 
 
 

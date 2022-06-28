@@ -143,7 +143,6 @@ def write_to_file(df, path):
 
 ## Web Driver 
 
-### 
 
 ```python
 base_url = "https://finance.yahoo.com/quote/"
@@ -163,7 +162,6 @@ for index in indexes:
     
 ```
 
-###  
 Doing so after combining all data together caused shifts in rows and or data wasn't synchronal . That caused wrong and illogical  visualizations so we needed to come back and rework our cleaning algorithm 
 
 ```python

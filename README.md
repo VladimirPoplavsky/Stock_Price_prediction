@@ -606,7 +606,7 @@ main_df
 </div>
 
 
-
+#### After the data handling we have clear dataset  
 
 ```python
 main_df.info()

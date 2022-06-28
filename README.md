@@ -83,6 +83,9 @@ from sklearn.preprocessing import MinMaxScaler
  Data from yahoo finance was stored in dynamically loading json object, using [Selenium](https://pypi.org/project/selenium/) package we managed bypass that  issue and collect row data.
 #### Inconsistent data:
  while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
+ 
+ * In our case, the optimal value of the parameter sleep_time = 2. It can be different for different pages.
+ * Note: to run this part  of code, the chromedriver must be updated according to Your version of browser
 
 ```python
 def get_infinity_page_html_data(chromedriver_path="./chromedriver.exe", scroll_number=50, sleep_time=2, url = ""):

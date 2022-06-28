@@ -80,7 +80,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 ### Using web Scraping we encounter several issues with data collection such as:
 #### Dynamic loading pages: 
- Data from yahoo finance was stored in dynamically loading json object, using Web Driver mechanism we managed bypass that  issue and collect row data.
+ Data from yahoo finance was stored in dynamically loading json object, using [Selenium](https://pypi.org/project/selenium/) package we managed bypass that  issue and collect row data.
 #### Inconsistent data:
  while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
 

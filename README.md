@@ -8,7 +8,6 @@
 #### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used index`s such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 10 years.
 
 
-
 # Imports 
 
 ```python

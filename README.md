@@ -54,7 +54,7 @@ from sklearn.preprocessing import MinMaxScaler
 import seaborn as sns
 ```
 
-
+ 
 ```python
 
 from sklearn import linear_model

@@ -1259,18 +1259,7 @@ tdf = pd.DataFrame(df, columns = ['Day','TSLA Daily change'])
 sns.violinplot(tdf.Day , tdf['TSLA Daily change'])
 ```
 
-    D:\Programs\Anaconda\lib\site-packages\seaborn\_decorators.py:36: FutureWarning: Pass the following variables as keyword args: x, y. From version 0.12, the only valid positional argument will be `data`, and passing other arguments without an explicit keyword will result in an error or misinterpretation.
-      warnings.warn(
-    
-
-
-
-
-    <AxesSubplot:xlabel='Day', ylabel='TSLA Daily change'>
-
-
-
-
+### In this graph, we see that if we take data over a large period of time, the day of the week doesn't impact.
     
 ![png](output_17_2.png)
     

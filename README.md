@@ -116,8 +116,8 @@ def make_table(soup):
 
 ## Data cleaning 
 
-# Remooving "Devidend and 
-
+* removing "Dividend" rows. Dividend is a payment. It means distribution of profits by a corporation between shareholders. If current row is Dividend we can remove it because othes values on this day are empty
+* Stock split (or stock divide) increases the number of shares in a company. For example if the company had 1 million shares, and maks split 2:1, each will have a price 2 times lower than the original. Each owner of the previous 100 shares will now own 200 new shares. The nominal value of the shares is proportionally reduced.
 ```python
 def data_cleaning(df):
     df = df[df["Open"].str.contains("Dividend") == False]

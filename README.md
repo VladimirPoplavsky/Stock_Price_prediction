@@ -606,7 +606,7 @@ main_df
 </div>
 
 
-#### After the data handling we have clear dataset  
+### After the data handling we have clear dataset  
 
 ```python
 main_df.info()
@@ -668,6 +668,12 @@ main_df.info()
     dtypes: float64(36), int64(5), object(7)
     memory usage: 957.0+ KB
     
+
+### As stock share prices are different from one index to another and split operations can drastically change stock price without actually changing its value  We needed parameters that would be consistent throughout all time period and Indexes  
+
+* Daily change  : represents difference from Open to Close 
+
+* Daily change Max :  represents difference from Open to Close  from Low to Hight ( in absolute value)
 
 
 ```python
@@ -1068,7 +1074,8 @@ df.to_csv('main_dataframe.csv')
 <p>11 rows × 43 columns</p>
 </div>
 
-
+### In addition we wanted to check if the day of the week has an impact  on stock price so the new column was added 
+* Day : Day of the week 
 
 
 ```python
@@ -1082,12 +1089,6 @@ while i  < 2500:
     df['Day'][i] = temp.dayofweek
     i=i+1
 ```
-
-    C:\Users\vikto\AppData\Local\Temp/ipykernel_35548/314205087.py:8: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      df['Day'][i] = temp.dayofweek
     
 
 

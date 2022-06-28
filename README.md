@@ -2,7 +2,7 @@
 
 
 
-### Student project of the "Introduction to data science" course from Holon Institute of Technology (HIT)
+### Student project of "Introduction to data science" course from Holon Institute of Technology (HIT)
 ##### Made by Vladimir Poplavsky and Viktor Rokytko
 
 # Background

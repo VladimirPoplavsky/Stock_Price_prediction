@@ -1,14 +1,9 @@
-## Stock Price Prediction
+### **Stock Price Prediction**
+
 
 
 ### Student project of "Introduction to data science" course from Holon Institute of Technology (HIT)
-#### Made by Vladimir Poplavsky and Viktor Rokytko
-
-
-
-
-
-
+##### Made by **Vladimir Poplavsky** and **Viktor Rokytko**
 
 # Background
 

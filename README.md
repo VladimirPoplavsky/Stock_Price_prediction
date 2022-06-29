@@ -4,13 +4,13 @@
 
 
 ### Student project of "Introduction to data science" course from Holon Institute of Technology (HIT)
-##### Made by **Vladimir Poplavsky** and **Viktor Rokytko**
+#### Made by **Vladimir Poplavsky** and **Viktor Rokytko**
 
 ## Background
 
 #### A share is a security issued by a company. All investors who bought the shares became co-owners of the company. The share just confirms that its owner has a share in the company, even minor.
 #### More and more people begin to think about the possibility of investing and increasing at their capital. The most common way - starting your own business - requires a large amount of initial capital and personal participation. These circumstances limit the desire and possibilities of many. Thanks to the development of the Internet and computer technology, today everyone has the opportunity to invest in the financial stock market by trading securities and stocks over the Internet.
-#### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used index`s such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 10 years.
+#### In our project we tried to find out if there is a possibility to predict Stock Market share price using other indexes within same sector ( technology). From our previous observation stock market tend to rise and fall all together , we used indexes such as MSFT . TSLA. AMD . INTC and NVIDA  share prices for the last 8 years.
 
 
 # Imports 
@@ -83,16 +83,16 @@ from sklearn.preprocessing import MinMaxScaler
  
 # Getting Data
 
-### For our project we decided to use data from [yahoo finance](https://finance.yahoo.com/) website as it has all data that we need 
+### For our project, we decided to use data from [yahoo finance](https://finance.yahoo.com/) website as it has all data that we need 
 
 ### Using web Scraping we encounter several issues with data collection such as:
 #### Dynamic loading pages: 
- Data from yahoo finance was stored in dynamically loading json object, using [Selenium](https://pypi.org/project/selenium/) package we managed bypass that  issue and collect row data.
+ Data from yahoo finance was stored in a dynamically loading JSON object, using [Selenium](https://pypi.org/project/selenium/) package we managed bypass that  issue and collect row data.
 #### Inconsistent data:
- while loading page with web driver solved some problem the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed as to collect consistent data 
+ while loading the page with the web driver solved some problems the data we collected was inconsistent and some rows were missing   due to “fast scrolling” adjusting that value  allowed us to collect consistent data 
  
  * In our case, the optimal value of the parameter sleep_time = 2. It can be different for different pages.
- * Note: to run this part  of code, the chromedriver must be updated according to Your version of browser
+ * Note: to run this part  of the code, the chromedriver must be updated according to Your version of the browser
 
 ```python
 def get_infinity_page_html_data(chromedriver_path="./chromedriver.exe", scroll_number=50, sleep_time=2, url = ""):
@@ -121,10 +121,10 @@ def make_table(soup):
     return df
 ```
 
-## Data cleaning 
+# Data cleaning 
 
-* removing "Dividend" rows. Dividend is a payment. It means distribution of profits by a corporation between shareholders. If current row is Dividend we can remove it because othes values on this day are empty
-* Stock split (or stock divide) increases the number of shares in a company. For example if the company had 1 million shares, and maks split 2:1, each will have a price 2 times lower than the original. Each owner of the previous 100 shares will now own 200 new shares. The nominal value of the shares is proportionally reduced.
+* removing "Dividend" rows. The dividend is a payment. It means the distribution of profits by a corporation between shareholders. If the current row is Dividend we can remove it because of the other values on this day that are empty
+* Stock split (or stock divide) increases the number of shares in a company. For example, if the company had 1 million shares, and maks a split 2:1, each will have a price 2 times lower than the original. Each owner of the previous 100 shares will now own 200 new shares. The nominal value of the shares is proportionally reduced.
 
 
 
@@ -166,7 +166,7 @@ for index in indexes:
     
 ```
 
-Doing so after combining all data together caused shifts in rows and or data wasn't synchronal . That caused wrong and illogical  visualizations so we needed to come back and rework our cleaning algorithm 
+### Doing so after combining all data together caused shifts in rows and or data wasn't synchronal . That caused wrong and illogical  visualizations so we needed to come back and rework our cleaning algorithm 
 
 ```python
 indexes = ["NVDA","AAPL","TSLA","AMD","MSFT","INTC"]
@@ -614,7 +614,7 @@ main_df
 </div>
 
 
-### After the data handling we have clear dataset with 107500 cells 
+### After the data handling we now have clear dataset with 107500 cells 
 
 ```python
 main_df.info()
@@ -677,7 +677,7 @@ main_df.info()
     memory usage: 957.0+ KB
     
 
-### As stock share prices are different from one index to another and split operations can drastically change stock price without actually changing its value  We needed parameters that would be consistent throughout all time period and Indexes  
+### As stock share prices are different from one index to another and split operations can drastically change stock price without actually changing its value  We needed parameters that would be consistent throughout all time periods  and Indexes  
 
 * Daily change  : represents difference from Open to Close 
 
@@ -697,10 +697,6 @@ write_to_file(main_df, ("main_dataframe" + ".csv"))
 
 ```
 
-
-```python
-
-```
 
 
 ```python
@@ -1267,7 +1263,7 @@ tdf = pd.DataFrame(df, columns = ['Day','TSLA Daily change'])
 sns.violinplot(tdf.Day , tdf['TSLA Daily change'])
 ```
 
-### In this graph, we see that if we take data over a large period of time (2500 rows in our case), the day of the week doesn't impact.
+### In this graph, we see that if we take data over a large period of time (2500 rows in our case), the day doesn't corelate with Daily change value.
     
 ![png](output_17_2.png)
     
@@ -1289,7 +1285,12 @@ tdf = pd.DataFrame(df, columns = ['Day','TSLA Daily change'])
 tdf.drop(tdf.index[500:2548], inplace=True) 
 sns.violinplot(tdf.Day , tdf['TSLA Daily change'])
 ```
-### But if you take data for a short period of time (for example, 500 rows), the day of the week impact's
+### But if we take data for a short period of time (for example, 500 rows), the day of the week has impact on Daily change value
+
+* Day 0 (Mon) majority of days Stock price closed with positive value
+
+* Day 1 (Tue) majority of days Stock price closed with negative value
+
 ![png](output_19_2.png)
     
 
@@ -1307,6 +1308,7 @@ sns.violinplot(tdf.Day , tdf['NVDA Daily change'])
 
 
 ## In the next part we can find out what is correlation level between some parameters.
+
 ### As expected correlation is Hight thought all Tech companies and little less with TSLA index as it is more “Car” then “tech”
 
 ### But, when again decreasing our  dataset to 500 rows we can see that correlation increases among all stocks 
@@ -1387,13 +1389,6 @@ sns.heatmap(tdf.corr(), annot=True)
 
 
 
-```python
-
-```
-
-
-
-
     
 ![png](output_26_1.png)
     
@@ -1406,25 +1401,17 @@ sns.heatmap(tdf.corr(), annot=True)
 ```
 
 
-
-
-
     
 ![png](output_27_1.png)
     
 
 
 
-```python
-
-```
-
 # Machine Learning 
 
 ## Linear regression 
 
-### First of all in order to predict share price for one company using data from other companies wanted to make sure that we can recive accurate data with simply algorithm 
-
+### First of all in order to predict share price for one company using data from other companies  we wanted to make sure that we can indeed receive accurate data with a simply algorithm 
 
 
 
@@ -1449,7 +1436,7 @@ plt.show()
 ![png](output_30_0.png)
     
 
-### As we  saw before corelation between "Daily change" valuse is preatty high 
+### As we saw before correlation between "Daily change" values is pretty high 
 
 
 ```python
@@ -1536,17 +1523,13 @@ r2_score(tdf['NVDA Close'].tolist(),m.predict(tdf.iloc[:,1:2]).flatten())
 
 ```
 
-# LSTM prediction algoritm 
+## LSTM prediction algoritm 
 
 
-### In this application, we used the LSTM network to predict the closing stock price using the past 50-day stock price.
+### In this application, we used the LSTM network to predict the closing stock price using the past 60-day stock price.
 
 
-
-
-### For the final par we desided to use LSTM model to see how accurate our predictions are going to be data from other companyins instead usind data from the same company 
-
-
+### For the final part, we decided to use the LSTM model to see how accurate our predictions are going to be using  data from other companies instead using data from the same company 
 
 ```python
 df = pd.read_csv('main_dataframe.csv')
@@ -1559,7 +1542,7 @@ tdf = tdf.iloc[::-1]
 tdf = tdf.tail(500)  
 ```
 
-### For the prediction model we decided to use only last 500 rows for more precise predictions 
+### For the prediction model we decided to use only last 500 rows
 
 ```python
 close_data = tdf.filter(['NVDA Close'])
@@ -1578,10 +1561,9 @@ training_data_len = math.ceil(len(dataset) *.8)
 train_data = scaled_data[0:training_data_len  , : ]
 ```
 
-### We splited our data to traning and prediction  for 80% to 20% ratio 
+### We split our data to training and prediction  or 80% to 20% ratio 
 
-## The algoritmn is going to usethe past 60-day stock price data.  Tant value can be chnged in code and by lowering it we can get more and more acurate prediction  
-
+### The algorithm is going to use the past 60-day stock price data.  Tant value can be changed in code and by lowering it we can get more and more accurate prediction  
 ```python
 x_train_data=[]
 y_train_data =[]
@@ -1611,7 +1593,7 @@ model.add(Dense(units=1))
 ```
 
 
-## The LSTM model is compiled using the mean squared error (MSE) loss function and the adam optimizer.
+### The LSTM model is compiled using the mean squared error (MSE) loss function and the adam optimizer.
 
 ```python
 model.compile(optimizer='adam', loss='mean_squared_error')
@@ -1657,11 +1639,11 @@ print(rmse)
     18.215237917282103
     
 
-### The 18.2 value indicates the model’s predicted values that match the actual values from the test data set with  93% accuracy. (close value rnges naer 250 - 300)
+### The 18.2 value indicates the model’s predicted values that match the actual values from the test data set with  93% accuracy. (close value ranges near 250 - 300)
 
-### Important to note that it is not a constant Value as we are working with Nural Netvork and running code again and agoin we will recive different value +-3 
+### Important to note that it is not a constant value as we are working with Nural Network and running code, again and again, we will receive different values +-3 
 
-### We ran our code 5 times and 18 ws our avarage 
+### We ran our code 5 times and 18 was our average 
 
 
 ```python
@@ -1687,9 +1669,9 @@ plt.show()
 ![png](output_51_1.png)
     
 
-### Here on the graph we can see that althought 93% accuracy can be considered solid the prediction line is always "too late" and cannot keep up with actula value 
+### Here on the graph we can see that although 93% accuracy can be considered solid the prediction line is always "too late" and cannot keep up with actual value 
 
-### While stock market is not changing a lot ( 5% a day) our model can be used, Othervise it will cause or Partfolio to crush 
+### While the stock market is not changing a lot ( 5% a day) our model can be used, Otherwise it will cause our Portfolio to crush
 
 
 ```python
@@ -1787,7 +1769,7 @@ df
 
 
 
-## Now we would like to compare our predictions using oly data from the same stock market to see if it is going to be more accurate 
+## Now we would like to compare our predictions using only data from the same stock market to see if it is going to be more accurate 
 
 ```python
 tdf = pd.DataFrame(df, columns = ['Date','NVDA Close','NVDA Open','NVDA Low','NVDA High','NVDA Volume'])
@@ -1805,7 +1787,7 @@ print(rmse)
     21.68927375212881
     
 
-### Here  we also run our code 5 times , yet the R2 score is  even  a litle bit  higher then expected 
+### Here we also run our code 5 times, yet the R2 score is  even  a little bit  higher than expected 
 
     
 ![png](output_64_1.png)
@@ -1813,7 +1795,7 @@ print(rmse)
 
 
 
-### Here  we dicided to use all the data and see if  our R2 score will differ from the revious attempts
+### Here we decided to use all the data and see if our R2 score will differ from the previous attempts
 
 
 ```python
@@ -1830,7 +1812,7 @@ print(rmse)
 
 
 
-### In our last attempt we dicided to get  reasonably "good" R2 score without lowering  x_train data set to 1 
+### In our last attempt we decided to get reasonably "good" R2 score without lowering  x_train data set to 1 
 
 
 
@@ -1842,6 +1824,18 @@ print(rmse)
 
     8.986595893871623
 
-### When we used x_train data set as 5 previous days we could finally mach the Actual values 
+
 
 ![png](output_13_1.png)
+
+
+### After running multiple combinations and changing Neural networks and the number of days We stopped on useing x_train data set as 5 previous days and we finally almost  matched the Actual values 
+
+
+
+# Conclusion 
+
+### We understand that the Stock market is very unstable and affected by lots of different variables. If such a precise algorithm would exist it would definitely disturb a whole industry and probably would make  people lose their jobs 
+### Yet in our project we wanted to show that some companies, in the same category,  are highly affected by one another and that could and should be used to understand and make predictions in the stock market. In the end,  using such tool can help people to make decisions with higher precision
+
+

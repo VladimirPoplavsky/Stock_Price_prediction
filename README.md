@@ -681,7 +681,7 @@ main_df.info()
 
 * Daily change  : represents difference from Open to Close 
 
-* Daily change Max :  represents difference from Open to Close  from Low to Hight ( in absolute value)
+* Daily change Max :  represents difference from Lowest to Highest (in absolute value)
 
 
 ```python

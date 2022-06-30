@@ -1836,6 +1836,13 @@ print(rmse)
 # Conclusion 
 
 ### We understand that the Stock market is very unstable and affected by lots of different variables. If such a precise algorithm would exist it would definitely disturb a whole industry and probably would make  people lose their jobs 
+
 ### Yet in our project we wanted to show that some companies, in the same category,  are highly affected by one another and that could and should be used to understand and make predictions in the stock market. In the end,  using such tool can help people to make decisions with higher precision
 
 
+### Bibliography
+
+### ChromeDriver - https://chromedriver.chromium.org/getting-started
+### Liner Regrassion - campus.gov.il 
+### LSRM - https://www.askpython.com/python/examples/neural-networks
+ 
